@@ -27,3 +27,12 @@ A second endpoint returns a summary, which looks like:
  
 ## Steps
 
+## Tests
+
+If you wanna run the test, run following command:
+
+```
+$python -m unittest discover -s <directory/>tests -p '*_test.py'
+```
+
+
