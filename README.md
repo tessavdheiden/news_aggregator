@@ -1,4 +1,4 @@
-# News text API
+# News aggregator
 
 A request would look like:
 

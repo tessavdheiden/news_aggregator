@@ -1,0 +1,12 @@
+# editors
+.idea/
+.vscode/
+
+# Python
+*.egg-info/
+.pytest_cache/
+__pycache__
+.cache/
+
+# Mac
+.DS_Store
