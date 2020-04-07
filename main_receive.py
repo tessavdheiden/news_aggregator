@@ -4,8 +4,7 @@ from news_parser import NewsParser
 
 
 def run_news_aggregator():
-    # requests.get("http://127.0.0.1:8080").json()
-    newsfinder = NewsFinder("bbc.com")
+    newsfinder = NewsFinder("http://127.0.0.1:8080")
     newslist = []
     for page in newsfinder.news_pages():
         p = NewsParser(page)

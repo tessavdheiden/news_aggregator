@@ -1,12 +1,19 @@
 from fastapi import FastAPI
 import uvicorn
+import json
 
-app = FastAPI()
+app = FastAPI(debug=True)
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "Sep, how are you?"}
+# Data
+with open("sample0.json", 'rb') as f:
+    page = json.load(f)
+
+
+# Route
+@app.get('/page0')
+async def get_page():
+    return {"page": page}
 
 
 if __name__ == "__main__":
