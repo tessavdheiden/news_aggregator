@@ -31,10 +31,10 @@ Open your browser at <a href="http://127.0.0.1:8000/pages/0" class="external-lin
 You will see the JSON response as:
 
 ```JSON
-  {
-    "document_id": "example_id",
-    "summary": "This is the summary"
-  }
+{
+"document_id": "example_id",
+"summary": "This is the summary"
+}
 ```
 
 ## Tests
