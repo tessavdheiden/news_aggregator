@@ -1,13 +1,13 @@
 import unittest
 
-from news_view import NewsView
+from src.news_view import NewsView
 
 
 class NewsViewTest(unittest.TestCase):
-    def test_has_show_method(self):
-        newslist = list()
+    def test_save_json(self):
+        newslist = list(News("foo", "bar"))
         newsview = NewsView(newslist)
-        newsview.show()
+
 
 if __name__ == "__main__":
     unittest.main()

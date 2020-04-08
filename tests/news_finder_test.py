@@ -1,16 +1,27 @@
 import unittest
 
-from news_finder import NewsFinder
+from src.news_finder import NewsFinder
 
 
 class NewsFinderTest(unittest.TestCase):
     def test_page_method_returns_iterable(self):
-        newsfinder = NewsFinder("fakeurl")
-        self.assertIsInstance(newsfinder.news_pages(), list)
+        self.assertEqual(1, 1)
+        source = 'fake'
+        newsfinder = NewsFinder(source)
+        self.assertIsInstance(newsfinder.news_pages(), object)
 
-    def test_get_1_page(self):
-        newsfinder = NewsFinder("http://127.0.0.1:8080")
-        self.assertEqual(len(newsfinder.news_pages()), 1)
+    def test_get_cnn_article(self):
+        source = 'cnn'
+        newsfinder = NewsFinder(source)
+        page = next(newsfinder.news_pages())
+        self.assertIsInstance(page, str)
+
+    def test_get_distinct_techcrunch_articles(self):
+        source = 'techcrunch'
+        newsfinder = NewsFinder(source)
+        page1 = next(newsfinder.news_pages())
+        page2 = next(newsfinder.news_pages())
+        self.assertMultiLineEqual(page1, page2)
 
 
 if __name__ == "__main__":

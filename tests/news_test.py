@@ -1,6 +1,6 @@
 import unittest
 
-from news import News
+from src.news import News
 
 
 class NewsTest(unittest.TestCase):

@@ -1,0 +1,5 @@
+FastAPI
+json
+os
+uvicorn
+requests

@@ -1,10 +1,10 @@
-from news_finder import NewsFinder
-from news_view import NewsView
-from news_parser import NewsParser
+from src.news_finder import NewsFinder
+from src.news_view import NewsView
+from src.news_parser import NewsParser
 
 
 def run_news_aggregator():
-    newsfinder = NewsFinder("http://127.0.0.1:8080")
+    newsfinder = NewsFinder("bbc-news")
     newslist = []
     for page in newsfinder.news_pages():
         p = NewsParser(page)
