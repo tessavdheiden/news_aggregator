@@ -32,8 +32,8 @@ You will see the JSON response as:
 
 ```JSON
 {
-"document_id": "example_id",
-"summary": "This is the summary"
+"document_id":"example_id",
+"summary":"Brief description of a newspage"
 }
 ```
 
