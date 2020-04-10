@@ -2,11 +2,12 @@ from src.news import News
 
 class NewsParser(object):
     def __init__(self, page):
-        self.page = page
         self.text = ""
         self.summary = ""
-        self.set_text()
-        self.set_summary()
+        if isinstance(page, dict):
+            self.page = page
+            self.set_text()
+            self.set_summary()
 
     def parse(self):
         return News(text=self.text, summary=self.summary)

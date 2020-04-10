@@ -14,14 +14,18 @@ class NewsFinderTest(unittest.TestCase):
         source = 'cnn'
         newsfinder = NewsFinder(source)
         page = next(newsfinder.news_pages())
-        self.assertIsInstance(page, str)
+        self.assertIsInstance(page, dict)
 
     def test_get_distinct_techcrunch_articles(self):
         source = 'techcrunch'
         newsfinder = NewsFinder(source)
-        page1 = next(newsfinder.news_pages())
-        page2 = next(newsfinder.news_pages())
-        self.assertMultiLineEqual(page1, page2)
+        pages = []
+        for i, page in enumerate(newsfinder.news_pages()):
+            pages.append(page)
+            if i == 1:
+                break
+        self.assertNotEqual(pages[0], pages[1])
+
 
 
 if __name__ == "__main__":

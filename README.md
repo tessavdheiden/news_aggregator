@@ -20,22 +20,25 @@ Install dependancies:
 $ pip install -r requirements.txt
 ```
 
-Run the app via python
+```cd``` into the directory and launch the app via uvicorn:
+ 
 ```console
-$ python run.py
+$ uvicorn application:app --reload
 ```
 
 ## Check it
-Open your browser at <a href="http://127.0.0.1:8000/pages/0" class="external-link" target="_blank">http://127.0.0.1:8000/pages/0</a>
+Open your browser at <a href="http://127.0.0.1:8000/pages/bbc-news/0" class="external-link" target="_blank">http://127.0.0.1:8000/pages/bbc-news/0</a>
 
 You will see the JSON response as:
 
 ```JSON
 {
-"document_id":"example_id",
+"document_id":0,
 "summary":"Brief description of a newspage"
 }
 ```
+
+Feel free to select a different page: "cnn" or "fox-news" together with some id: 0..10.
 
 ## Tests
 
