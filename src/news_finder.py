@@ -10,20 +10,22 @@ class NewsFinder(object):
         if self.content['status'] == 'ok':
             length = len(self.content['articles'])
             for i in range(length):
-                yield self.content['articles'][i]
+                if self.content['articles'][i]['description']: # can be None
+                    yield self.content['articles'][i]
 
-    def exits(self, page):
-        if not (page.startswith('http://') or page.startswith('https://')): return False
-        self.response = requests.get(page)
+    def exits(self):
         return True if self.response.status_code == 200 else False
 
     def search_for_articles(self, source):
-        # from https://newsapi.org/
-        root_url = ('http://newsapi.org/v2/top-headlines?'
-               f'sources={source}'
-               '&apiKey=2e40f2a1fa0f4d96bc1acbdbef7a3242')
+        url = 'https://newsapi.org/v2/everything?'
+        parameters = {
+            'q': source,  # query phrase
+            'pageSize': 10,  # maximum is 100
+            'apiKey': '2e40f2a1fa0f4d96bc1acbdbef7a3242'  # your own API key
+        }
+        self.response = requests.get(url, params=parameters)
 
-        if self.exits(root_url):
+        if self.exits():
             self.content = self.response.json()
 
 

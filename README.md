@@ -27,10 +27,8 @@ $ uvicorn application:app --reload
 ```
 
 ## Check it
-Open your browser at <a href="http://127.0.0.1:8000/pages/bbc-news/0" class="external-link" target="_blank">http://127.0.0.1:8000/pages/bbc-news/0</a>
-
-You will see the JSON response as:
-
+Please go to [Search](http://127.0.0.1:8000/search) and enter a search term to obtain newspages and their summaries.
+ 
 ```JSON
 {
 "document_id":0,
@@ -38,7 +36,15 @@ You will see the JSON response as:
 }
 ```
 
-Feel free to select a different page: "cnn" or "fox-news" together with some id: 0..10.
+
+Alternatively, check your browser at for a table of news pages and summaries:
+
+- [BBC News](http://127.0.0.1:8000/sources/bbc-news)
+- [CNN](http://127.0.0.1:8000/sources/cnn)
+- [Tech crunch](http://127.0.0.1:8000/sources/techcrunch)
+
+Here you will see a table of summary and title of headlines for these source papers. 
+You will see the JSON response as:
 
 ## Tests
 

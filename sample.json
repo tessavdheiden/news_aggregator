@@ -1,0 +1,14 @@
+{
+    "status": "ok",
+    "articles": [{
+        "title": "example glossary",
+		"description": "blabla",
+        "content": "blabla"
+    },
+    {
+        "title": "example glossary",
+		"description": "blabla",
+        "content": "blabla"
+    }
+    ]
+}

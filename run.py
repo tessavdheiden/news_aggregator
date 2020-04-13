@@ -1,20 +1,19 @@
 from src.news_finder import NewsFinder
-from src.news_view import NewsView
 from src.news_parser import NewsParser
 
 
-def run_news_aggregator(news_source="bbc-news", index=1):
+def get_news_list(news_source="bbc-news", index=1): # get_news_list(source)
     newsfinder = NewsFinder(news_source)
     newslist = []
     for page in newsfinder.news_pages():
         p = NewsParser(page)
         news = p.parse()
         newslist.append(news)
-    newsview = NewsView(newslist)
-    return newsview.show(index)
+    return newslist
+
+#def get_news(url):
 
 
-if __name__ == "__main__":
-    run_news_aggregator()
+
 
 

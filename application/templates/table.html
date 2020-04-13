@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>News articles {{ id }} </h2>
+<table style="width:100%">
+  <tr>
+    <th>Title</th>
+    <th>Summary</th>
+  </tr>
+  {% for item in items %}
+      <tr>
+        <td>{{item.title}}</td>
+        <td>{{item.summary}}</td>
+      </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
