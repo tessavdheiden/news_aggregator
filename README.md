@@ -27,6 +27,8 @@ $ uvicorn application:app --reload
 ```
 
 ## Check it
+Please go to [Text](http://127.0.0.1:8000/summarize/corona) and obtain a table with summaries.
+
 Please go to [Search](http://127.0.0.1:8000/search) and enter a search term to obtain newspages and their summaries.
  
 ```JSON
@@ -35,13 +37,6 @@ Please go to [Search](http://127.0.0.1:8000/search) and enter a search term to o
 "summary":"Brief description of a newspage"
 }
 ```
-
-
-Alternatively, check your browser at for a table of news pages and summaries:
-
-- [BBC News](http://127.0.0.1:8000/sources/bbc-news)
-- [CNN](http://127.0.0.1:8000/sources/cnn)
-- [Tech crunch](http://127.0.0.1:8000/sources/techcrunch)
 
 Here you will see a table of summary and title of headlines for these source papers. 
 You will see the JSON response as:
