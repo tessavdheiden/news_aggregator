@@ -23,13 +23,15 @@ $ pip install -r requirements.txt
 ```cd``` into the directory and launch the app via uvicorn:
  
 ```console
-$ uvicorn application:app --reload
+$ FLASK_APP=application/main.py
+```
+
+```console
+$ flask run --port=8080
 ```
 
 ## Check it
-Please go to [Text](http://127.0.0.1:8000/summarize/corona) and obtain a table with summaries.
-
-Please go to [Search](http://127.0.0.1:8000/search) and enter a search term to obtain newspages and their summaries.
+Please go to [API](http://127.0.0.1:8080) and obtain a table with summaries for your entered text.
  
 ```JSON
 {
@@ -37,9 +39,6 @@ Please go to [Search](http://127.0.0.1:8000/search) and enter a search term to o
 "summary":"Brief description of a newspage"
 }
 ```
-
-Here you will see a table of summary and title of headlines for these source papers. 
-You will see the JSON response as:
 
 ## Tests
 
