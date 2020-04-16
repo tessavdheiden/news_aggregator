@@ -32,6 +32,11 @@ $ flask run --port=8080
 
 ## Check it
 Please go to [API](http://127.0.0.1:8080) and obtain a table with summaries for your entered text.
+
+You will obtain something like:
+
+<img src="Screenshot.png" width="400" />
+
  
 ```JSON
 {

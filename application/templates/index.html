@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Summarize text</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="static/styles.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body style="background: #000;">
@@ -38,9 +38,9 @@
   {% if result %}
   {% for item in items %}
       <tr>
-        <td>{{item.id}}</td>
-        <td>{{item.text}}</td>
-        <td>{{item.summary}}</td>
+        <td><font size="1">{{item.id}}</font></td>
+        <td><font size="1">{{item.text}}</font></td>
+        <td><font size="1">{{item.summary}}</font></td>
       </tr>
   {% endfor %}
   {% endif %}

@@ -1,14 +1,14 @@
 import unittest
 
-from src.news_finder import NewsFinder
+from src.summarize import nltk_summarizer, get_word_freq_dict
 
 
 class NewsFinderTest(unittest.TestCase):
-    def test_page_method_returns_iterable(self):
+    def test_get_word_freq_dict(self):
         self.assertEqual(1, 1)
         source = 'fake'
         newsfinder = NewsFinder(source)
-        self.assertIsInstance(newsfinder.news_pages(), object)
+        self.assertIsInstance(newsfinder.news_pages(), dict)
 
     def test_get_cnn_article(self):
         source = 'cnn'

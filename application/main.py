@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 from src.document import Document
-from src.summarize import nltk_summarizer
+from src.summarize import generate_summary
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ document_list = []
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     rawtext = request.form['rawtext']
-    summary = nltk_summarizer(rawtext)
+    summary = generate_summary(rawtext)
     document = Document(id=len(document_list), text=rawtext, summary=summary)
     document_list.append(document)
     return render_template('index.html', items=document_list, result=len(document_list))
