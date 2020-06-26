@@ -12,6 +12,18 @@ A request would look like:
 
 This endpoint returns an id of a document, which can be used to request a summary and second endpoint returns a summary.
 
+
+The response of this endpoint should be something like:
+
+```
+  HTTP/1.1 200 OK
+
+  Content-Type: application/json
+  {
+    "document_id": "example_id",
+    "summary": "This is the summary"
+  }
+```
  
 ## Steps
 Install dependancies:
