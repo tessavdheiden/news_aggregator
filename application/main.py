@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from flask_api import status
 from src.document import Document
 from src.summarize import generate_summary
 
@@ -14,18 +15,14 @@ def summarize_text():
 
     try:
         summary = generate_summary(rawtext)
-    except IndexError as e:
-        print("Text too short ")
-        summary = ""
-    except Exception as e:
-        print("Exception: ", e)
-        summary = ""
-    finally:
         document = Document(id=len(document_list), text=rawtext, summary=summary)
         document_list.append(document)
-        status = 'error' if summary == "" else 'success'
+        return jsonify(text=rawtext, summary=summary)
+    except IndexError as e:
+        return jsonify(error=f"Text too short: {e}"), status.HTTP_411_LENGTH_REQUIRED
+    except Exception as e:
+        return jsonify(error=f"Unable to generate summary: {e}"), status.HTTP_500_INTERNAL_SERVER_ERROR
 
-    return jsonify(text=rawtext, summary=summary, status=status)
 
 
 if __name__ == "__main__":

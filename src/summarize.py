@@ -5,6 +5,9 @@ from math import sqrt
 
 
 def read_article(text):
+    if "." not in text:
+        raise IndexError
+
     article = text.split(". ")
     sentences = []
 
