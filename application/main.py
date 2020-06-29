@@ -14,17 +14,17 @@ def summarize_text():
 
     try:
         summary = generate_summary(rawtext)
-    except Exception as exp:
-        print("Exception: ", exp)
+    except IndexError as e:
+        print("Text too short ")
         summary = ""
+    except Exception as e:
+        print("Exception: ", e)
+        summary = ""
+    finally:
+        document = Document(id=len(document_list), text=rawtext, summary=summary)
+        document_list.append(document)
+        status = 'error' if summary == "" else 'success'
 
-    document = Document(id=len(document_list), text=rawtext, summary=summary)
-    document_list.append(document)
-
-    if summary == "":
-        status = 'error'
-    else:
-        status = 'success'
     return jsonify(text=rawtext, summary=summary, status=status)
 
 
