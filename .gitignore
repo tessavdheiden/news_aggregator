@@ -13,3 +13,4 @@ __pycache__
 
 # Temporary files
 .data
+*.log

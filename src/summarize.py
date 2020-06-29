@@ -55,6 +55,7 @@ def build_similarity_matrix(sentences):
     return similarity_matrix
 
 def generate_summary(text, top_n=5):
+    """ Generating a summary of a text by discarding similarities in sentences """
     summarize_text = []
 
     # Step 1 - Read text anc split it
