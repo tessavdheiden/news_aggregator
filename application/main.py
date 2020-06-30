@@ -1,7 +1,11 @@
 from flask import Flask, request, jsonify, render_template
 from flask_api import status
+import logging
+
+
 from src.document import Document
 from src.summarize import generate_summary
+
 
 app = Flask(__name__)
 

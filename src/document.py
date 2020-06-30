@@ -12,4 +12,4 @@ class Document(object):
         self.text = text
         self.summary = summary
 
-        logger.info(f'Created document {self.id}')
+        logger.info(f'Created document: {self.id} summary: {self.summary}')
