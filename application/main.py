@@ -73,7 +73,7 @@ def summarize_text():
 @app.route('/api/<id>', methods=['GET'])
 def get_summary(id):
     try:
-        document = repository.get_document_from_id(id)
+        document = repository.get_document_from_id(int(id))
         return jsonify(id=document.id, summary=document.summary), status.HTTP_200_OK
 
     except Exception as e:
