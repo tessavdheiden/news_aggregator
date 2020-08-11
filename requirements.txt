@@ -1,6 +1,9 @@
 requests>=2.22.0
 Flask>=1.0.2
+Flask-API
 networkx
 numpy
 logging
 re
+flask-sqlalchemy
+json
