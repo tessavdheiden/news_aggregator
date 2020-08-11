@@ -43,8 +43,7 @@ $ flask run --port=8080
 ```
 
 ```console
-$ curl -H "Content-Type: application/json" -X POST -d '{"text": "This is a large text. It should be summarized."}' 
-http://localhost:5000/api/documents/
+$ curl -H "Content-Type: application/json" -X POST -d '{"text": "This is a large text. It should be summarized."}' http://localhost:8080/api/documents/
 ```
 
 

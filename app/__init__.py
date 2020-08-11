@@ -20,6 +20,7 @@ file_handler.setFormatter(formatter)
 def create_app(config_name):
     app = Flask(__name__, instance_relative_config=True)
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///:memory:"
     db.init_app(app)
 
     @app.route('/api/documents/', methods=['GET', 'POST'])
