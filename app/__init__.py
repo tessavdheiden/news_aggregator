@@ -3,9 +3,12 @@ from flask_api import status
 from flask_sqlalchemy import SQLAlchemy
 import logging
 
+# initialize sql-alchemy
+db = SQLAlchemy()
 
+# local import
 from src.summarize import generate_summary
-
+from src.repository import DocumentList
 
 logger = logging.getLogger(__name__)
 formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
@@ -13,14 +16,10 @@ file_handler = logging.FileHandler('errors.log')
 file_handler.setLevel(logging.ERROR)
 file_handler.setFormatter(formatter)
 
-# initialize sql-alchemy
-db = SQLAlchemy()
-
-from src.repository import DocumentList
-
 
 def create_app(config_name):
     app = Flask(__name__, instance_relative_config=True)
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
     @app.route('/api/documents/', methods=['GET', 'POST'])
@@ -76,5 +75,5 @@ def create_app(config_name):
 
 
 if __name__ == "__main__":
-    app = create_app()
+    app = create_app(config_name="production")
     app.run(debug=True)

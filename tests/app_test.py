@@ -2,8 +2,8 @@ import unittest
 import json
 
 
-from application.main import create_app
-from application.main import db
+from app import create_app
+from app import db
 
 
 class ExampleTestCase(unittest.TestCase):

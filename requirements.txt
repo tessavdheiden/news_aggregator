@@ -7,3 +7,5 @@ logging
 re
 flask-sqlalchemy
 json
+psycopg2
+curl
